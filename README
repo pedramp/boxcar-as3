@@ -1,7 +1,24 @@
-Boxcar ActionScript 3 API
+Boxcar.io ActionScript3 API
 
 
-by Pedram Pourhossein
+
+Boxcar ActionScript API is a simple way to using Boxcar notification service
+
+
+// Sending a direct notification
+var n:INotification = new NotifyToOne('my_provider_key', 'receiver_email_address', 'my message!');
+n.message = 'Test API';
+n.sourceURL = 'http://example.com';
+n.send();
+
+
+// broadcast a message to branch of dudes!
+new NotifyToMany('my_provider_key', 'my_provider_secret', 'my message!').send();
+
+
+// send invitation message to a specific user
+new Subscribe('my_provider_key', 'my_provider_secret', 'user_email_address').send();
+
+
 
 May 12 2011
-
